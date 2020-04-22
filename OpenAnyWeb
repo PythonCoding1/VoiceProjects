@@ -23,7 +23,11 @@ def takeCommand():
 while True:
   command=takeCommand()
   if "open"in command:
-   command=command.lower().replace("open","").strip()
+   command=command.lower().replace("open","").strip()  #here we need to remove the open to get just website name so that we can put it in 
+                                                        webbrowser.open(f"https://www.{websitename}.com") so if we do not remove open the link
+                                                        will be wrong, now why we even use open? beacuse the loop is running continuously so 
+                                                        it will only respond if open in command and don't respond on unnecessary commands!
+  
    print(command.strip())
 
    webbrowser.open(f"https://www.{command}.com")
